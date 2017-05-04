@@ -1,20 +1,23 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-avatar/paper-avatar.html">
+<link rel="import" href="../materializecss-styles/materializecss-styles.html">
+
 <!--
 `lrndesign-avatar`
 A LRN element
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="lrndesign-avatar">
   <template>
+    <style include="materializecss-styles"></style>
     <style>
       :host {
         display: block;
       }
     </style>
-    <paper-avatar label="{{label}}" src="{{src}}" two-chars="{{twoChars}}" colors="{{colors}}" jdenticon="{{jdenticon}}"></paper-avatar>
+    <paper-avatar label="{{label}}" src="{{src}}" two-chars="{{twoChars}}" class$="{{color}}" jdenticon="{{jdenticon}}"></paper-avatar>
   </template>
 
   <script>
@@ -47,11 +50,12 @@ A LRN element
           value: false
         },
         /**
-         * array of colors to draw from
-         * @type {Object}
+         * Materialize CSS color class names
          */
-        colors: {
-          type: Array,
+        color: {
+          type: String,
+          reflectToAttribute: true,
+          notify: true,
         },
         /**
          * Form abstract art from hash of label
