@@ -1,4 +1,4 @@
-# git clone the Polymer tools repository somewhere outside of your 
+# git clone the Polymer tools repository somewhere outside of your
 # element project
 git clone git://github.com/Polymer/tools.git
 

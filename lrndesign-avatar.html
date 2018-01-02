@@ -4,7 +4,7 @@
 
 <!--
 `lrndesign-avatar`
-A LRN element
+Visualize a user account eitehr with an image, a label, or as abstract art.
 
 @demo demo/index.html
 -->
@@ -17,7 +17,7 @@ A LRN element
         display: block;
       }
     </style>
-    <paper-avatar label="{{label}}" src="{{src}}" two-chars="{{twoChars}}" class$="{{color}}" jdenticon="{{jdenticon}}"></paper-avatar>
+    <paper-avatar label="[[label]]" src="[[src]]" two-chars="[[twoChars]]" class$="[[color]]" jdenticon="[[jdenticon]]"></paper-avatar>
   </template>
 
   <script>
@@ -28,7 +28,6 @@ A LRN element
       properties: {
         /**
          * text to use for avatar
-         * @type {Object}
          */
         label: {
           type: String,
@@ -36,14 +35,12 @@ A LRN element
         },
         /**
          * link to an image, optional
-         * @type {Object}
          */
         src: {
           type: String
         },
         /**
          * Mode for presenting 1st two letters
-         * @type {Object}
          */
         twoChars: {
           type: Boolean,
@@ -55,24 +52,14 @@ A LRN element
         color: {
           type: String,
           reflectToAttribute: true,
-          notify: true,
         },
         /**
          * Form abstract art from hash of label
-         * @type {Object}
          */
         jdenticon: {
           type: Boolean,
-          value: false
-        }
-      },
-      /**
-       * Present self as a demo.
-       * @return {[type]} [description]
-       */
-      _demoInit: function() {
-        this.label = 'Label';
-        this.twoChars = true;
+          value: false,
+        },
       },
     });
   </script>
